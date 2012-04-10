@@ -1,0 +1,31 @@
+﻿/**
+ * @author liwei
+ */
+var _fightsCos = 		
+	[
+	   	{"index":"CA","name":"中国国航"},
+	   	{"index":"MU","name":"东方航空"},
+	   	{"index":"CZ","name":"南方航空"},
+	   	{"index":"HU","name":"海南航空"},
+	   	{"index":"3U","name":"四川航空"},
+	   	{"index":"SC","name":"山东航空"},
+	   	{"index":"VD","name":"河南航空"},
+	   	{"index":"NS","name":"河北航空"},
+	   	{"index":"FM","name":"上海航空"},
+	   	{"index":"JD","name":"首都航空"},
+	   	{"index":"0Q","name":"重庆航空"},
+	   	{"index":"GS","name":"天津航空"},
+	   	{"index":"MF","name":"厦门航空"},
+	   	{"index":"ZH","name":"深圳航空"},
+	   	{"index":"EU","name":"成都航空"},
+	   	{"index":"9C","name":"春秋航空"},
+	   	{"index":"8L","name":"祥鹏航空"},
+	   	{"index":"PN","name":"西部航空"},
+	   	{"index":"KN","name":"中国联合航空"},
+	   	{"index":"CN","name":"大新华航空"},
+	   	{"index":"IJ","name":"长城航空"},
+	   	{"index":"HO","name":"吉祥航空"},
+	   	{"index":"G5","name":"华夏航空"},
+	   	{"index":"KY","name":"昆明航空"},
+	   	{"index":"JR","name":"幸福航空"}
+	];

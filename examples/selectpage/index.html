@@ -1,0 +1,106 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+	<head>
+		<title>jqMobi Kitchen Sink</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<!-- 		<link rel="stylesheet" type="text/css" href="../../kitchensink/icons.css" title="default"/> -->
+		<link rel="stylesheet" type="text/css" href="../../kitchensink/jq.ui.carbon.css" title="default"/>
+		<link rel="stylesheet" type="text/css" href="../../myPlugins/css/jq.selectpage.css" title="default"/>
+		<!-- 		<link rel="stylesheet" type="text/css" href="../../myPlugins/css/jq.act_sheet.css" title="default"/> -->
+		<!-- uncomment for AppMobi apps
+		<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
+		<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script>
+		-->
+		<script type="text/javascript" charset="utf-8" src="../../jq.mobi.js"></script>
+		<!-- include touch.js on desktop browsers only -->
+		<script type="text/javascript">
+		
+			if(!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+				var script = document.createElement("script");
+				script.src = "../../touch.js";
+				var tag = $("head").append(script);
+				$.os.android = true;
+				//let's make it run like an android device
+				$.os.desktop = true;
+			}
+			/* This function runs once the page is loaded, but appMobi is not yet active */
+
+			/* This code prevents users from dragging the page */
+			var preventDefaultScroll = function(event) {
+				event.preventDefault();
+				window.scroll(0, 0);
+				return false;
+			};
+			document.addEventListener('touchmove', preventDefaultScroll, false);
+			
+
+		</script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.swipe.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.template.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.carousel.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.css3animate.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.drawer.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.passwordBox.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.scroller.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.shake.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.selectBox.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.alphatable.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.actionsheet.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.popup.js"></script>
+		<!-- 		<script type="text/javascript" charset="utf-8" src="../../myPlugins/jq.act_sheet.js"></script> -->
+		<script type="text/javascript" charset="utf-8" src="../../ui/jq.ui.js"></script>
+		<!-- 		<script type="text/javascript" charset="utf-8" src="../../myPlugins/ext.js"></script> -->
+		<!-- 		<script type="text/javascript" charset="utf-8" src="../../myPlugins/jq.act_sheet.js"></script> -->
+		<script type="text/javascript" charset="utf-8" src="../../myPlugins/selectpage/data.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../myPlugins/selectpage/jq.selectpage.js"></script>
+		<script type="text/javascript" charset="utf-8" src="app.js"></script>
+		
+	</head>
+	<body>
+		<div id="jQUi">
+			<!-- this is the splashscreen you see. -->
+			<div id="splashscreen" class='ui-loader'>
+				<img src="../../kitchensink/images/splash.png">
+				<br>
+				<br>
+				<span class='ui-icon ui-icon-loading spin'></span><h1 >Starting app</h1>
+			</div>
+			<div id="header">
+				<!-- 				<img id='badgephone' onclick='jq.ui.toggleSideMenu()' align="right" src='../../kitchensink/images/badge.png' style='padding-top:7px;padding-right:5px;'> -->
+				<!-- 				<img id='badgetablet' align="right" src='../../kitchensink/images/badge.png' style='padding-top:7px;padding-right:5px;'> -->
+			</div>
+			<div id="content">
+				
+				<div title='Welcome' id="main" class="panel" selected = "true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home">
+					<h2 class='expanded' onclick='showHide(this,"main_info");'>Welcome</h2>
+					<p id='main_info'>
+						Welcome to the kitchen sink demo for jqMobi.  Here you will find samples of how to use the jqMobi libraries.  Please select an option from below.
+					</p>
+					<ul>
+						<li class='icon home big'>
+							<a href="#jqm" id='jqmlink'>显示action_sheet</a>
+						</li>
+						<li>
+							<a href="javascript:initselectpage();" >使用方法</a>
+						</li>
+					</ul>
+				</div>
+				<!-- ------------------------------------------ -->
+				<div title="jqMobi" id="jqm" class="panel" data-nav="menu_jqmobi" ></div>
+				<div id="jqmserialize" class="panel" title="$().serialize" data-nav="menu_jqmobi" ></div>
+			</div>
+			<!-- ------------------------------------------ -->
+			<!-- navbar -->
+			<!-- navbar -->
+			<div id="navbar">
+				<div class="horzRule"></div>
+				<a href="#main" id='navbar_home' class='icon home' >首页 <span class='jq-badge lr'>3</span></a>
+				<a href="#jqm" id='navbar_js' class="icon help" >帮助</a>
+			</div>
+			<!-- ------------------------------------------ -->
+		</div>
+	</body>
+</html>
