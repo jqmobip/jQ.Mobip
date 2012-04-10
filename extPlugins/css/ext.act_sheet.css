@@ -1,0 +1,76 @@
+#jq_act_sheet {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	background: black;
+	float: left;
+	z-index: 1000000;
+	background: #fff;
+	font-size: 32px;
+	
+}
+#jq_act_sheet a {
+	padding: 20px 1.5em;
+	display: block;
+	color: #0c2343;
+	line-height: 60px;
+	font-weight: bold;
+	text-decoration: none;
+}
+#jq_act_sheet hr {
+	margin: 0 10px;
+	border: 1px dashed #dedede;
+}
+#jq_act_sheet .as_content {
+	clear: both;
+	color: red;
+}
+#jq_act_sheet h5 {
+	color: #fff;
+	width: 100%;
+	line-height: 90px;
+	font-size: 32px;
+	text-align: center;
+	display: block;
+}
+#jq_act_sheet .sheetTitle {
+	width: 100%;
+	height: 95px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.4)), to(rgba(255,255,255,0)), color-stop(.5,rgba(255,255,255,.1)), color-stop(.5,rgba(255,255,255,0)));
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,.5) 0%, rgba(255,255,255,.2) 50%, rgba(255,255,255,0) 50%);
+	-webkit-box-shadow: 0px 1px 1px rgba(255,255,255,0.7);
+	box-shadow: 0px 1px 1px rgba(255,255,255,0.7);
+	background-color: rgba(10,80,220,1);
+}
+#jq_act_sheet a.selected {
+	background-color: rgba(150,150,150,1);
+}
+#jq_act_sheet a.cancel {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	color: #fff;
+	display: inline-block;
+	border: 1px solid rgba(0,0,0,.5);
+	-webkit-border-radius: .75em;
+	border-radius: .25em;
+	padding: 10px 20px;
+	line-height: 40px;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: rgba(11,62,115,1);
+}
+#jq_act_sheet a.cancel.selected {
+	background-color: rgba(73,73,73,1);
+}
+#jq_act_sheet a.red {
+	color: white;
+	background-color: rgba(204,0,0,1);
+}
+#jq_act_sheet a.red.selected {
+	background-color: rgba(255,0,0,1);
+}
