@@ -3,8 +3,12 @@
  */
 
 function initselectpage() {
-
-	$("#content").selectpage(_fightsCos);
-	$.ui.loadContent("#jq_selectpage");
+	var sp = $("#content").selectpage(_fightsCos, handler);
+	$.ui.setTitle('selectPage');
+	function handler() {
+		alert(sp.itemValue);
+		alert(sp.itemText);
+		$.ui.goBack();
+	}
 
 }

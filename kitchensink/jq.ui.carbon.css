@@ -106,7 +106,7 @@ width:100%;
 	position:absolute;
 	overflow:hidden;
 	width:100%;
-    z-index:-11;
+/*    z-index:-11;*/
     left:-10px;
     text-align:center;
 	height:48px; 

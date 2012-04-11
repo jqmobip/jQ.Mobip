@@ -17,7 +17,6 @@
 		<script type="text/javascript" charset="utf-8" src="../../jq.mobi.js"></script>
 		<!-- include touch.js on desktop browsers only -->
 		<script type="text/javascript">
-		
 			if(!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
 				var script = document.createElement("script");
 				script.src = "../../touch.js";
@@ -35,7 +34,6 @@
 				return false;
 			};
 			document.addEventListener('touchmove', preventDefaultScroll, false);
-			
 
 		</script>
 		<script type="text/javascript" charset="utf-8" src="../../plugins/jq.swipe.js"></script>
@@ -57,7 +55,6 @@
 		<script type="text/javascript" charset="utf-8" src="../../myPlugins/selectpage/data.js"></script>
 		<script type="text/javascript" charset="utf-8" src="../../myPlugins/selectpage/jq.selectpage.js"></script>
 		<script type="text/javascript" charset="utf-8" src="app.js"></script>
-		
 	</head>
 	<body>
 		<div id="jQUi">
@@ -73,7 +70,6 @@
 				<!-- 				<img id='badgetablet' align="right" src='../../kitchensink/images/badge.png' style='padding-top:7px;padding-right:5px;'> -->
 			</div>
 			<div id="content">
-				
 				<div title='Welcome' id="main" class="panel" selected = "true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home">
 					<h2 class='expanded' onclick='showHide(this,"main_info");'>Welcome</h2>
 					<p id='main_info'>

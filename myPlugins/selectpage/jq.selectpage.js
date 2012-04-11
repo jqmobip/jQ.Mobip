@@ -1,8 +1,11 @@
 ﻿/**
  * @author liwei
  */
+var handleEve;
 (function($) {
-	$.fn["selectpage"] = function(opts) {
+	$.fn["selectpage"] = function(opts, hf) {
+		handleEve = hf;
+
 		var tmp;
 		for(var i = 0; i < this.length; i++) {
 			tmp = new selectpage(this[i], opts);
@@ -36,35 +39,36 @@
 
 			try {
 				var that = this;
-				
-				var markStart = '<div id="jq_selectpage" title="选择航空公司" data-footer="none" class="panel"><ul>';
+				var markStart = '<div id="jq_selectpage" title="" data-footer="none" class="panel"><ul>';
 				var markEnd = "</ul></div>";
 				var markup;
 				markup = $(markStart + markEnd);
-				
-				if(opts != null && typeof opts == "object") {
 
+				if(opts != null && typeof opts == "object") {
+					var th = that;
 					var container = $(markup.children().get());
 					for( i = 0; i < opts.length; i++) {
-						var item = $('<li><a href="javascript:" onclick="getCompanyCD(' + opts[i].index + ')">' + opts[i].name + '</a></li>');
+						var td = th;
+						var key = opts[i].key;
+						var content = opts[i].content;
+						var item = $('<li><a href="javascript:;" onclick=getValue("' + key + '","' + content + '")>' + content + '</a></li>');
 						container.append(item);
+
 					}
 				}
-				function getCompanyCD(code){
-					alert(code);
-					$.ui.goBack();
-					that.hidePage();
-				}
-				
-
+				getValue = function(k, c) {
+					that.itemValue = k;
+					that.itemText = c;
+					handleEve(k, c);
+				};
 				$(elID).find("#jq_selectpage").remove();
 				selectpageEl = $(elID).append(markup);
-				$("#jq_selectpage ul").scroller({});  
-				// markup.on("click", "a", function () {
-					// $.ui.goBack();
-					// that.hidePage();
-				// });
-				
+				$("#jq_selectpage ul").scroller({});
+				$.ui.loadContent("#jq_selectpage");
+				markup.on("click", "a", function() {
+					that.hidePage();
+				});
+
 				this.activePage = markup;
 
 				// setTimeout(function() {
@@ -75,11 +79,7 @@
 				alert("error adding selectpage" + e);
 			}
 		};
-function getCompanyCD(code){
-					alert(code);
-					$.ui.goBack();
-					that.hidePage();
-				}
+
 		selectpage.prototype = {
 			activePage : null,
 			hidePage : function() {
@@ -89,11 +89,11 @@ function getCompanyCD(code){
 					$.ui.goBack();
 					that.hidePage()
 				});
-				
+
 				this.activePage.remove();
 				this.activePage = null;
 				this.el.style.overflow = "none";
-				
+
 			}
 		};
 
