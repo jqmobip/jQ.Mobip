@@ -109,7 +109,8 @@ oldElem=document.getElementsByTagName("link")[0];
 <script type="text/javascript" charset="utf-8" src="./plugins/jq.actionsheet.js"></script> 
 <script type="text/javascript" charset="utf-8" src="./plugins/jq.popup.js"></script> 
 <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.js"></script> 
-<script type="text/javascript" charset="utf-8" src="./myPlugins/jq.act_sheet.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./myPlugins/jq.act_sheet.js"></script>
+<script type="text/javascript" charset="utf-8" src="./myPlugins/jq.calendar.js"></script>  
 
 
 
@@ -1900,7 +1901,7 @@ oldElem=document.getElementsByTagName("link")[0];
 		<ul>
 			<li><a href="#myact_sheet">jq.act_sheet</a></li>
 			<li><a href="#">jq.selectpage</a></li>
-			<li><a href="#">123</a></li>
+			<li><a href="#mycanlender">jq.canlender</a></li>
 			<li><a href="#">123</a></li>
 			<li><a href="#">123</a></li>
 		</ul>
@@ -1938,7 +1939,17 @@ function initActSheet() {
 	$('#jQUi').act_sheet(title, content)
 }
 </script>
+<!-- myPlugins >jq.canlender -->
 
+     <div title="act_sheet" id="mycanlender" class="panel">
+		<a class="button" href="javascript:;" onclick="selectTime('startTime')">Show mycanlender</a>
+	</div>
+<script type="text/javascript">
+function selectTime(itemId) {
+	new Calendar('2012').show($("#" + itemId));
+	$.ui.loadContent('#__calendarPanel');
+}
+</script>
 
 
 </div>
