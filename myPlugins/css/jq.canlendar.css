@@ -1,61 +1,11 @@
-/*
-Syntax error: Invalid CSS after "@testBorder :": expected pseudoclass or pseudoelement, was " {1px solid red};"
-        on line 1 of jq.canlendar.scss
+#__calendarPanel {
+  background: #fff;
+  color: #000;
+  border: 1px solid red; }
 
-1: @testBorder : {1px solid red};
-2: #__calendarPanel{
-3:   background:#fff;
-4:   color:#000;
-5: }
+#__calendarTable th.title {
+  background: blue; }
 
-Backtrace:
-jq.canlendar.scss:1
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:928:in `expected'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:874:in `expected'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:856:in `expr!'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:622:in `pseudo'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:504:in `simple_selector_sequence'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:484:in `_selector'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:463:in `selector'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/css_parser.rb:16:in `block in parse_selector_string'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:789:in `str'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/css_parser.rb:16:in `parse_selector_string'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:131:in `directive'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:397:in `block_child'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:387:in `block_contents'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:58:in `stylesheet'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/scss/parser.rb:27:in `parse'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/engine.rb:326:in `_to_tree'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/engine.rb:299:in `_render'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/engine.rb:246:in `render'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:339:in `update_stylesheet'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:202:in `block in update_stylesheets'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:200:in `each'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:200:in `update_stylesheets'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:293:in `block (4 levels) in watch'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/path.rb:73:in `call'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/path.rb:73:in `run_callback'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/path.rb:55:in `callback_action'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/path.rb:35:in `update'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/state/file.rb:19:in `refresh'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/backends/polling.rb:17:in `each'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/backends/polling.rb:17:in `block in run'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/backends/polling.rb:15:in `loop'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/backends/polling.rb:15:in `run'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm/monitor.rb:26:in `run'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/vendor/fssm/lib/fssm.rb:70:in `monitor'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/plugin/compiler.rb:265:in `watch'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/plugin.rb:107:in `method_missing'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/exec.rb:431:in `watch_or_update'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/exec.rb:302:in `process_result'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/exec.rb:41:in `parse'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/lib/sass/exec.rb:21:in `parse!'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.1.15/bin/sass:8:in `<top (required)>'
-c:/Ruby193/bin/sass:19:in `load'
-c:/Ruby193/bin/sass:19:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"@testBorder :\": expected pseudoclass or pseudoelement, was \" {1px solid red};\"\A         on line 1 of jq.canlendar.scss\A \A 1: @testBorder : {1px solid red};\A 2: #__calendarPanel{\A 3:   background:#fff;\A 4:   color:#000;\A 5: }"; }
+#__calendarTable th.weekTitle {
+  background: #949594;
+  height: 40px; }

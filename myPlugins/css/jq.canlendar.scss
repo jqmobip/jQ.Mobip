@@ -1,5 +1,14 @@
-@testBorder : {1px solid red};
+$testBorder:1px solid red;
 #__calendarPanel{
   background:#fff;
   color:#000;
+  border:$testBorder;
 }
+#__calendarTable th.title{
+    background:blue;
+  }
+ #__calendarTable th.weekTitle{
+   background:gray;
+    height:40px;
+    
+ }
