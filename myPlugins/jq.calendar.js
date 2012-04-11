@@ -62,13 +62,13 @@ Calendar.prototype.draw = function() {
 	_cs[_cs.length] = '<form id="__calendarForm" name="__calendarForm" method="post">';
 	_cs[_cs.length] = '<table id="__calendarTable" width="100%" border="0" cellpadding="3" cellspacing="0" align="center">';
 	_cs[_cs.length] = ' <tr>';
-	_cs[_cs.length] = '  <th colspan="1"><input class="button" name="goPrevMonthButton" type="button" id="goPrevMonthButton" value="&lt;" \/><\/th>';
-	_cs[_cs.length] = '  <th colspan="5"><select style="width:140px;height:60px;margin:10px;font-size:28px;" name="yearSelect" id="yearSelect"><\/select><select style="width:140px;height:60px;margin:10px;font-size:28px;" name="monthSelect" id="monthSelect"><\/select><\/th>';
-	_cs[_cs.length] = '  <th colspan="1"><input class="button" name="goNextMonthButton" type="button" id="goNextMonthButton" value="&gt;" \/><\/th>';
+	_cs[_cs.length] = '  <th class="title" colspan="1"><input class="button" name="goPrevMonthButton" type="button" id="goPrevMonthButton" value="&lt;" \/><\/th>';
+	_cs[_cs.length] = '  <th class="title"  colspan="5"><select style="width:140px;height:60px;margin:10px;font-size:28px;" name="yearSelect" id="yearSelect"><\/select><select style="width:140px;height:60px;margin:10px;font-size:28px;" name="monthSelect" id="monthSelect"><\/select><\/th>';
+	_cs[_cs.length] = '  <th class="title"  colspan="1"><input class="button" name="goNextMonthButton" type="button" id="goNextMonthButton" value="&gt;" \/><\/th>';
 	_cs[_cs.length] = ' <\/tr>';
 	_cs[_cs.length] = ' <tr>';
 	for(var i = 0; i < 7; i++) {
-		_cs[_cs.length] = '<th class="" style="height:40px;border: 1px solid #eeeeee;">';
+		_cs[_cs.length] = '<th class="weekTitle">';
 		_cs[_cs.length] = Calendar.language["weeks"][this.language][i];
 		_cs[_cs.length] = '<\/th>';	
 	}
