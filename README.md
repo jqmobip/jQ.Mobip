@@ -3,5 +3,7 @@
 
 #myPlugins
 
-1).jq.act_sheet 在jq.actionsheet的基础上增加了带标题栏的actionsheet
+1).jq.act_sheet 在jq.actionsheet的基础上增加了带标题栏的actionsheet。
+
+2).jq.selectpage 在panel实现替代select的方案,适合可选项为30项以下的选择插件。
 
