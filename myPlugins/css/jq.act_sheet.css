@@ -9,13 +9,13 @@
 	z-index: 1000000;
 	background: #fff;
 	font-size: 32px;
-	
 }
 #jq_act_sheet a {
-	padding: 20px 1.5em;
 	display: block;
+	padding-left:30px;
+	height: 48px;
 	color: #0c2343;
-	line-height: 60px;
+	line-height: 48px;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -30,18 +30,22 @@
 #jq_act_sheet h5 {
 	color: #fff;
 	width: 100%;
-	line-height: 90px;
-	font-size: 32px;
+	height: 48px;
+	line-height: 48px;
+	font-size: 24px;
 	text-align: center;
 	display: block;
 }
 #jq_act_sheet .sheetTitle {
 	width: 100%;
-	height: 95px;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.4)), to(rgba(255,255,255,0)), color-stop(.5,rgba(255,255,255,.1)), color-stop(.5,rgba(255,255,255,0)));
-	background-image: -webkit-linear-gradient(top, rgba(255,255,255,.5) 0%, rgba(255,255,255,.2) 50%, rgba(255,255,255,0) 50%);
-	-webkit-box-shadow: 0px 1px 1px rgba(255,255,255,0.7);
-	box-shadow: 0px 1px 1px rgba(255,255,255,0.7);
+	height: 48px;
+	font-family: 'Eurostile-Black', Eurostile, Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 48px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 25, 33, 1)), to(rgba(14, 23, 32, 1)), color-stop(.5, rgba(27, 36, 46, 1)), color-stop(.5, rgba(14, 23, 32, 1)));
+	-webkit-box-shadow: 0px 0px 24px rgba(0,0,0,0.8);
+	box-shadow: 0px 0px 24px rgba(0,0,0,0.8);
 	background-color: rgba(10,80,220,1);
 }
 #jq_act_sheet a.selected {
@@ -50,19 +54,11 @@
 #jq_act_sheet a.cancel {
 	position: absolute;
 	right: 20px;
-	top: 15px;
-	color: #fff;
-	display: inline-block;
-	border: 1px solid rgba(0,0,0,.5);
-	-webkit-border-radius: .75em;
-	border-radius: .25em;
-	padding: 10px 20px;
-	line-height: 40px;
-	display: block;
-	text-align: center;
-	font-weight: bold;
-	text-decoration: none;
-	background-color: rgba(11,62,115,1);
+	top: 0;
+	padding:0 8px;
+	min-width: 55px;
+	height: 36px;
+	line-height: 36px;
 }
 #jq_act_sheet a.cancel.selected {
 	background-color: rgba(73,73,73,1);

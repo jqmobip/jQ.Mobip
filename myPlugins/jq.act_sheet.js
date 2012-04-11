@@ -47,7 +47,7 @@
                 var that = this;
                 $.ui.blockUI(.5);                
                
-                var markStart = '<div id="jq_act_sheet"><div class="sheetTitle"><h5 id="as_title"></h5><a href="javascript:;" class="cancel">取消</a></div><div class="as_content">';
+                var markStart = '<div id="jq_act_sheet"><div class="sheetTitle"><h5 id="as_title"></h5><a href="javascript:;" class="button cancel">取消</a></div><div class="as_content">';
                 var markEnd = '</div></div>';
                 var markup;
                  

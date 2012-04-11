@@ -17,6 +17,9 @@
 <link rel="stylesheet"  type="text/css" href="kitchensink/jq.ui.slate.css" title="slate" disabled='true'/>
 <link rel="stylesheet"  type="text/css" href="kitchensink/jq.ui.volcano.css" title="volcano" disabled='true' />
 
+<link rel="stylesheet"  type="text/css" href="./myPlugins/css/jq.act_sheet.css" />
+
+
 <style>
 	.scrollBar{background:white;}
     h3 {text-align:center; font-size:35px;}
@@ -106,6 +109,8 @@ oldElem=document.getElementsByTagName("link")[0];
 <script type="text/javascript" charset="utf-8" src="./plugins/jq.actionsheet.js"></script> 
 <script type="text/javascript" charset="utf-8" src="./plugins/jq.popup.js"></script> 
 <script type="text/javascript" charset="utf-8" src="./ui/jq.ui.js"></script> 
+<script type="text/javascript" charset="utf-8" src="./myPlugins/jq.act_sheet.js"></script> 
+
 
 
 <script type="text/javascript">
@@ -177,6 +182,7 @@ oldElem=document.getElementsByTagName("link")[0];
 		 <li class='icon home big'><a href="#jqm" id='jqmlink'>jqMobi</a></li>
 		 <li><a href="#jqmui" >jqUi</a></li>
 		 <li><a href="#jqmweb" >jqPlugins</a></li>
+		 <li><a href="#jqmp">myPlugins</a></li>
 		</ul>
 	</div> 
 
@@ -1100,7 +1106,7 @@ oldElem=document.getElementsByTagName("link")[0];
 		</ul>
 		<br/><br/>
 	</div>
-
+	
 	<!-- jqPlugins > jQ.scroller -->
 	<div title="Scroller" class="panel" id="webslider" scrolling="no">
 	<script>
@@ -1889,7 +1895,49 @@ oldElem=document.getElementsByTagName("link")[0];
     </style>
 
 	</div>
+<!------------------------myPlugins---------------------->
+	<div title="myPlugins" id="jqmp" class="panel">
+		<ul>
+			<li><a href="#myact_sheet">jq.act_sheet</a></li>
+			<li><a href="#">jq.selectpage</a></li>
+			<li><a href="#">123</a></li>
+			<li><a href="#">123</a></li>
+			<li><a href="#">123</a></li>
+		</ul>
+	</div>
+<!-- myPlugins >jq.act_sheet -->
 
+     <div title="act_sheet" id="myact_sheet" class="panel">
+		<a class="button" href="javascript:;" onclick="initActSheet()">Show act_sheet</a>
+	</div>
+<script type="text/javascript">
+	
+function initActSheet() {
+	var title = {
+		text : "123"		
+	}
+	var content = [{
+		text : "123",
+		cssClasses : '',
+		handler : function() {
+			alert(123);
+		}
+	}, {
+		text : "123",
+		cssClasses : '',
+		handler : function() {
+			alert(123);
+		}
+	}, {
+		text : "123",
+		cssClasses : '',
+		handler : function() {
+			alert(123);
+		}
+	}]
+	$('#jQUi').act_sheet(title, content)
+}
+</script>
 
 
 
@@ -1903,6 +1951,7 @@ oldElem=document.getElementsByTagName("link")[0];
     <a href="#jqm" id='navbar_js' class="icon target" >selectors</a>
     <a href="#jqmui" id='navbar_ui'  class="icon picture" >ui</a>
 	<a href="#jqmweb" id='navbar_plugins'  class="icon key" >plugins</a>
+	<a href="#jqmp" id="navbar_myPlugins" class="icon star">myPlugins</a>
 </div>
 
  <footer id='footerui'>
