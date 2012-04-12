@@ -32,7 +32,7 @@ function Calendar(beginYear, endYear, language, patternDelimiter, date2StringPat
 	this.year = this.date.getFullYear();
 	this.month = this.date.getMonth();
 	
-	this.colors = {"bg_cur_day":"#00CC33","bg_over":"#EFEFEF","bg_out":"#FFCC00"}
+	this.colors = {"bg_cur_day":"#10559a","bg_over":"#EFEFEF","bg_out":"#349d17"}
 };
 
 Calendar.language = {
@@ -62,9 +62,9 @@ Calendar.prototype.draw = function() {
 	_cs[_cs.length] = '<form id="__calendarForm" name="__calendarForm" method="post">';
 	_cs[_cs.length] = '<table id="__calendarTable" width="100%" border="0" cellpadding="3" cellspacing="0" align="center">';
 	_cs[_cs.length] = ' <tr>';
-	_cs[_cs.length] = '  <th class="title" colspan="1"><input class="button" name="goPrevMonthButton" type="button" id="goPrevMonthButton" value="&lt;" \/><\/th>';
-	_cs[_cs.length] = '  <th class="title"  colspan="5"><select style="width:140px;height:60px;margin:10px;font-size:28px;" name="yearSelect" id="yearSelect"><\/select><select style="width:140px;height:60px;margin:10px;font-size:28px;" name="monthSelect" id="monthSelect"><\/select><\/th>';
-	_cs[_cs.length] = '  <th class="title"  colspan="1"><input class="button" name="goNextMonthButton" type="button" id="goNextMonthButton" value="&gt;" \/><\/th>';
+	// _cs[_cs.length] = '  <th class="title" colspan="2"><a name="goPrevMonthButton" type="button" id="goPrevMonthButton"><\/a><\/th>';
+	_cs[_cs.length] = '  <th id="dateTitle" class="title"  colspan="7"><div><a name="goPrevMonthButton" type="button" id="goPrevMonthButton"><\/a><span id="showYear"></span><a name="goNextMonthButton" id="goNextMonthButton"><\/a><\/div><select name="yearSelect" id="yearSelect"><\/select><select name="monthSelect" id="monthSelect"><\/select><div style="clear:both"><\/div><\/th>';
+	// _cs[_cs.length] = '  <th class="title"  colspan="2"><a name="goNextMonthButton" id="goNextMonthButton"><\/a><\/th>';
 	_cs[_cs.length] = ' <\/tr>';
 	_cs[_cs.length] = ' <tr>';
 	for(var i = 0; i < 7; i++) {
@@ -127,10 +127,14 @@ Calendar.prototype.draw = function() {
 
 Calendar.prototype.bindYear = function() {
 	var ys = this.getElementById("yearSelect");
+	
 	ys.length = 0;
 	for (var i = this.beginYear; i <= this.endYear; i++){
 		ys.options[ys.length] = new Option(i + Calendar.language["year"][this.language], i);
 	}
+	var yearValue = ys.value;
+	var showYear = $("#showYear");
+	showYear.text(yearValue);
 };
 
 Calendar.prototype.bindMonth = function() {
@@ -139,6 +143,8 @@ Calendar.prototype.bindMonth = function() {
 	for (var i = 0; i < 12; i++){
 		ms.options[ms.length] = new Option(Calendar.language["months"][this.language][i], i);
 	}
+	
+	
 };
 
 Calendar.prototype.goPrevMonth = function(e){
@@ -150,6 +156,17 @@ Calendar.prototype.goPrevMonth = function(e){
 	}
 	this.date = new Date(this.year, this.month, 1);
 	this.changeSelect();
+	
+	var showYear = $("#showYear");
+	var yearValue = this.year.toString();
+	
+	var monthValue = (this.month + 1).toString();
+	if(monthValue && monthValue.length < 2){
+		monthValue = "0" + monthValue;
+	}
+	a = yearValue + "-" + monthValue;
+	alert(a);
+	showYear.text(a);
 	this.bindData();
 };
 
@@ -162,6 +179,16 @@ Calendar.prototype.goNextMonth = function(e){
 	}
 	this.date = new Date(this.year, this.month, 1);
 	this.changeSelect();
+	var showYear = $("#showYear");
+	var yearValue = this.year.toString();
+	
+	var monthValue = (this.month + 1).toString();
+	if(monthValue && monthValue.length < 2){
+		monthValue = "0" + monthValue;
+	}
+	a = yearValue + "-" + monthValue;
+	alert(a);
+	showYear.text(a);
 	this.bindData();
 };
 
@@ -180,6 +207,8 @@ Calendar.prototype.changeSelect = function() {
 			break;
 		}
 	}
+	
+	
 };
 
 Calendar.prototype.update = function (e){
@@ -207,7 +236,11 @@ Calendar.prototype.bindData = function () {
 			if (today.getFullYear() == calendar.date.getFullYear()) {
 				if (today.getMonth() == calendar.date.getMonth()) {
 					if (today.getDate() == dateArray[i]) {
+						
+						// tds[i].style.color = "#fff";
+						alert(tds[i].style.color);
 						tds[i].style.backgroundColor = calendar.colors["bg_cur_day"];
+						
 						tds[i].onmouseover = function () {this.style.backgroundColor = calendar.colors["bg_out"];}
 						tds[i].onmouseout  = function () {this.style.backgroundColor = calendar.colors["bg_cur_day"];}
 						tds[i].onclick = function () {
@@ -235,9 +268,10 @@ Calendar.prototype.bindData = function () {
 						}
 						tds[i].onmouseover = function () {this.style.backgroundColor = calendar.colors["bg_out"];}
 						tds[i].onmouseout  = function () {this.style.backgroundColor = calendar.colors["bg_over"];}
-						tds[i].style.color = "";
+						tds[i].style.color = "#000";
 					}else{
 						tds[i].style.color = "#949594";
+						tds[i].style.backgroundColor = "#d4d7d4";
 					}
 				}else if(today.getMonth() < calendar.date.getMonth()){
 					tds[i].onclick = function () {

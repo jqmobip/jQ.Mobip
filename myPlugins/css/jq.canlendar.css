@@ -1,11 +1,54 @@
 #__calendarPanel {
-  background: #fff;
-  color: #000;
-  border: 1px solid red; }
+  font-size: 28px; }
 
 #__calendarTable th.title {
-  background: blue; }
+  width: 100%;
+  text-align: center;
+  height: 80px;
+  background-color: #09549c;
+  font-size: 32px;
+  font-weight: normal; }
+  #__calendarTable th.title select {
+    width: 140px;
+    height: 60px;
+    margin: 10px;
+    font-size: 28px;
+    display: none; }
+  #__calendarTable th.title div {
+    margin: auto;
+    width: 610px; }
+    #__calendarTable th.title div span#showYear {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      width: 230px;
+      line-height: 84px;
+      height: 84px;
+      background: #09549c url(img/date_bg.png) repeat-x; }
+    #__calendarTable th.title div a#goPrevMonthButton {
+      display: block;
+      float: left;
+      background: #09549c url(img/preMonth.png) no-repeat;
+      height: 84px;
+      width: 188px; }
+    #__calendarTable th.title div a#goNextMonthButton {
+      margin: 0;
+      display: block;
+      background: #09549c url(img/nextMonth.png) no-repeat;
+      float: right;
+      height: 84px;
+      width: 192px; }
 
 #__calendarTable th.weekTitle {
-  background: #949594;
+  background: #EFEFEF;
+  color: #000;
   height: 40px; }
+
+#__calendarTable td {
+  border: 1px solid #dedede; }
+
+#__calendarTable th {
+  background: #09549c; }
+
+#selectTodayButton, #clearButton, #closeButton {
+  display: none; }
