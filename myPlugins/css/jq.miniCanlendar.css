@@ -1,5 +1,7 @@
-#__calendarPanel {
-  font-size: 28px; }
+﻿#__calendarPanel {
+  font-size: 28px;
+  color:#000; 
+  }
 
 #__calendarTable th.title {
   width: 100%;
@@ -18,6 +20,7 @@
     margin: auto;
     width: 610px; }
     #__calendarTable th.title div span#showYear {
+      color:#0c2343;
       margin: 0;
       padding: 0;
       display: inline-block;
@@ -26,18 +29,25 @@
       height: 84px;
       background: #09549c url(img/date_bg.png) repeat-x; }
     #__calendarTable th.title div a#goPrevMonthButton {
+      background: #09549c url(img/preMonth.png) no-repeat;
       display: block;
       float: left;
-      background: #09549c url(img/preMonth.png) no-repeat;
       height: 84px;
       width: 188px; }
+      #__calendarTable th.title div a#goPrevMonthButton:active{    
+      	 background: #09549c url(img/preMonth_press.png) no-repeat;
+      }
     #__calendarTable th.title div a#goNextMonthButton {
+      background: #09549c url(img/nextMonth.png) no-repeat;
       margin: 0;
       display: block;
-      background: #09549c url(img/nextMonth.png) no-repeat;
       float: right;
       height: 84px;
       width: 192px; }
+      #__calendarTable th.title div a#goNextMonthButton:active{
+      
+      	 background: #09549c url(img/nextMonth_press.png) no-repeat;
+      }
 
 #__calendarTable th.weekTitle {
   background: #EFEFEF;
