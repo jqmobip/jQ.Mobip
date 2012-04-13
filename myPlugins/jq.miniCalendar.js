@@ -165,7 +165,6 @@ Calendar.prototype.goPrevMonth = function(e){
 		monthValue = "0" + monthValue;
 	}
 	a = yearValue + "-" + monthValue;
-	alert(a);
 	showYear.text(a);
 	this.bindData();
 };
@@ -187,7 +186,6 @@ Calendar.prototype.goNextMonth = function(e){
 		monthValue = "0" + monthValue;
 	}
 	a = yearValue + "-" + monthValue;
-	alert(a);
 	showYear.text(a);
 	this.bindData();
 };
@@ -238,7 +236,6 @@ Calendar.prototype.bindData = function () {
 					if (today.getDate() == dateArray[i]) {
 						
 						// tds[i].style.color = "#fff";
-						alert(tds[i].style.color);
 						tds[i].style.backgroundColor = calendar.colors["bg_cur_day"];
 						
 						tds[i].onmouseover = function () {this.style.backgroundColor = calendar.colors["bg_out"];}
