@@ -21,20 +21,26 @@ function $import(jsUrl) {
 	$__EXIST_JS__[jsUrl] = 1;
 }
 
-function $importJS(jsfile,folder) {
-	var scriptNode = document.createElement('script');
+function $importJS(jsfile, folder) {
+	var fol = folder;
+	if( typeof (fol) == "undefined") {
+		fol = "";
+	}else{
+		fol = folder + "/";
+	}
+	alert(fol);
+	var scriptNode = document.getElementsByTagName('script');
 	var srcStart, srcEnd;
 	for( i = 0; i < scriptNode.length; i++) {
 		var JSsrc = scriptNode[i].src;
-		if(JSsrc.match('ext.js') == 'ext.js') {
+		if(JSsrc.match("js/ext.js") == "js/ext.js") {
 			var str = new Array();
-			str = JSsrc.split('/ext');
+			str = JSsrc.split('/ext.js');
 			srcStart = str[0];
-			srcEnd = str.pop();
 		}
 	}
-	
-	var jsUrl = srcStart + folder + jsfile + srcEnd;
+
+	var jsUrl = srcStart + "/" + fol + jsfile + ".js";
 	$import(jsUrl);
 }
 

@@ -1,1 +1,4 @@
-window.onload = ((function(){alert(123)})());
+$importJS('html');
+$importJS('al','lib');
+$importPlugin('actionsheet');
+
